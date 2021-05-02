@@ -1,13 +1,4 @@
-FROM wordpress:php8.0-apache
-
-# persistent dependencies
-#RUN set -eux; \
-#       apt-get update; \
-#       apt-get install -y --no-install-recommends \
-# XDEBUG
-#               php-xdebug \
-#       ; \
-#       rm -rf /var/lib/apt/lists/*
+FROM wordpress:5.7.1-php7.4-apache
 
 RUN pecl install xdebug \
         && docker-php-ext-enable xdebug
